@@ -1,13 +1,9 @@
 package com.anti.laptop_student;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
+import javax.persistence.OneToOne;
 
 @Entity // az sorba tegye bele mint rekordot ne kulon tablakent kezeleje
 public class Student_One {
@@ -19,15 +15,14 @@ public class Student_One {
 	private String name;
 	private int marks;
 	
-	@OneToMany
-	private List <Laptop> laptops = new ArrayList <Laptop> ();
+	@OneToOne
+	private Laptop laptop;
 	
-	
-	public List<Laptop> getLaptops() {
-		return laptops;
+	public Laptop getLaptop() {
+		return laptop;
 	}
-	public void setLaptops(List<Laptop> laptops) {
-		this.laptops = laptops;
+	public void setLaptop(Laptop laptop) {
+		this.laptop = laptop;
 	}
 	public int getRollno() {
 		return rollno;

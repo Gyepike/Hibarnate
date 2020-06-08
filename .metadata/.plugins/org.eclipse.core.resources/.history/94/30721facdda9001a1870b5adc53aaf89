@@ -18,7 +18,7 @@ public class App
 	static Laptop lap2;
 	static Laptop lap3;
 	static Laptop lap4;
-	static Laptop lap5;
+	
 	
 	public static void main(String[] args) {
 
@@ -33,7 +33,6 @@ public class App
 		lap2 = new Laptop();
 		lap3 = new Laptop();
 		lap4 = new Laptop();
-		lap5 = new Laptop();
 		
 		lap.setAid(103);
 		lap.setLaname("Toshiba");
@@ -58,16 +57,11 @@ public class App
 		lap4.setAid(107);
 		lap4.setLaname("Asus");
 		
-		
-		lap5.setAid(108);
-		lap5.setLaname("Toshiba");
-		
-		stud1.setRollno(15);
-		stud1.setName("Muny0");
-		stud1.setMarks(90);
-		stud1.getLaptops().add(lap4);
-		stud1.getLaptops().add(lap5);
-		  
+		stud.setRollno(15);
+		stud.setName("Muny0");
+		stud.setMarks(90);
+		stud.getLaptops().add(lap4);
+	
 		
 		
 		

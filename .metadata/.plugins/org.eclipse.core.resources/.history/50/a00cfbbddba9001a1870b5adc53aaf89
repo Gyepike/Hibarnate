@@ -1,0 +1,19 @@
+package com.anti.laptop_student;
+
+
+
+public class App
+
+{
+
+	static Student_One stud;
+
+	public static void main(String[] args) {
+
+		//general();
+       //DataGeneral.general();
+		
+		stud = new Student();
+		
+	}
+}

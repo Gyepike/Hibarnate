@@ -59,7 +59,7 @@ public class App
 		lap4.setLaname("Asus");
 		
 		
-		lap5.setAid(108);
+		lap5.setAid(104);
 		lap5.setLaname("Toshiba");
 		
 		stud1.setRollno(15);
