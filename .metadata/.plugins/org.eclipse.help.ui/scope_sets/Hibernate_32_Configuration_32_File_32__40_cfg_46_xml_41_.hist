@@ -1,0 +1,7 @@
+#Tue Jun 02 07:55:16 CEST 2020
+__DEFAULT__=false
+org.eclipse.sdk.Eclipse.master=true
+org.eclipse.sdk.Google.master=true
+org.eclipse.help.ui.localSearch.master=true
+org.hibernate.eclipse.help.HibernateWiki.master=true
+expression=Hibernate Configuration File (cfg.xml)

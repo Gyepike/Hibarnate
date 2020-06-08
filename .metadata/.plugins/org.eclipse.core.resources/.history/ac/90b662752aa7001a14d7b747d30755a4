@@ -1,0 +1,48 @@
+package com.anti.laptop_student;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity() // @Entity(name="Alien_Munyi") change entity name it change table name too 
+@Table(name="Munyi") // only change table name 3 layer => class enity table 
+public class Laptop {
+  
+	
+	public Laptop() {
+		super();
+	}
+
+
+	@Id // primary key
+	private int lid;
+	
+	
+    private  String laname;
+   
+    
+
+
+	public String getLaname() {
+		return laname;
+	}
+
+
+
+	public void setLaname(String laname) {
+		this.laname = laname;
+	}
+
+
+
+	public int getAid() {
+		return lid;
+	}
+	public void setAid(int aid) {
+		this.lid = aid;
+	}
+	
+}
+

@@ -1,0 +1,36 @@
+package com.anti.hibarnate;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+/**
+ * Hello world!
+ * 
+ *  remove "name" attribute from session-Factory. It is not rneeded it make error 
+ *  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sakila?serverTimezone=UTC</property>
+ *  kenyszeriteni kell utc hasznaljon 
+ *  https://stackoverflow.com/questions/26515700/mysql-jdbc-driver-5-1-33-time-zone-issue
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+     
+    {   
+    	
+        Alien munyi = new alien(121,"Munyi", "green");
+        System.out.println(munyi.toString());
+        
+        Configuration con = new Configuration().configure().addAnnotatedClass(Alien.class);
+        
+        SessionFactory sf = con.buildSessionFactory();
+        Session session = sf.openSession();
+        
+    	Transaction tx =   session.beginTransaction();
+        session.save(munyi); 
+        tx.commit();
+        
+    }
+}
