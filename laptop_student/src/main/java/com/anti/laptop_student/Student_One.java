@@ -19,14 +19,15 @@ public class Student_One {
 	private String name;
 	private int marks;
 	
-	@OneToMany
-	private List <Laptop> laptops = new ArrayList <Laptop> ();
+	@OneToMany(mappedBy = "studentone") // many latop with connect table Student_One_Laptop 2 enity Student_one, laptop
+	private List <Laptop_Many> laptops = new ArrayList <Laptop_Many> ();
 	
 	
-	public List<Laptop> getLaptops() {
+	
+	public List<Laptop_Many> getLaptops() {
 		return laptops;
 	}
-	public void setLaptops(List<Laptop> laptops) {
+	public void setLaptops(List<Laptop_Many> laptops) {
 		this.laptops = laptops;
 	}
 	public int getRollno() {

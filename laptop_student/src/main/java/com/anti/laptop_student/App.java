@@ -9,92 +9,11 @@ public class App
 
 {
 
-	static Student_One stud;
-	static Student_One stud1;
-	
-	
-	static Laptop lap;
-	static Laptop lap1;
-	static Laptop lap2;
-	static Laptop lap3;
-	static Laptop lap4;
-	static Laptop lap5;
 	
 	public static void main(String[] args) {
 
 		//general();
-       //DataGeneral.general();
-		
-		stud = new Student_One();
-		stud1 = new Student_One();
-		
-		lap = new Laptop();
-		lap1 = new Laptop();
-		lap2 = new Laptop();
-		lap3 = new Laptop();
-		lap4 = new Laptop();
-		lap5 = new Laptop();
-		
-		lap.setAid(103);
-		lap.setLaname("Toshiba");
-
-		lap1.setAid(104);
-		lap1.setLaname("Dell");
-
-		lap2.setAid(106);
-		lap2.setLaname("IBM");
-
-		lap3.setAid(107);
-		lap3.setLaname("Asus");
-		
-		stud.setRollno(14);
-		stud.setName("Munyi");
-		stud.setMarks(50);
-		stud.getLaptops().add(lap);
-		stud.getLaptops().add(lap1);
-		stud.getLaptops().add(lap2);
-		
-		
-		lap4.setAid(107);
-		lap4.setLaname("Asus");
-		
-		
-		lap5.setAid(108);
-		lap5.setLaname("Toshiba");
-		
-		stud1.setRollno(15);
-		stud1.setName("Muny0");
-		stud1.setMarks(90);
-		stud1.getLaptops().add(lap4);
-		stud1.getLaptops().add(lap5);
-		  
-		
-		
-		
-		Configuration con = new Configuration().configure().addAnnotatedClass(Student_One.class);
-		con.addAnnotatedClass(Laptop.class);
-
-		SessionFactory sef = con.buildSessionFactory();
-
-		Session se = sef.openSession();
-		Transaction tx = se.beginTransaction();
-		
-		se.save(lap);
-		se.save(lap1);
-		se.save(lap2);
-		se.save(lap3);
-		
-		
-		se.save(stud);
-		se.save(stud1);
-		
-		
-		
-		
-		tx.commit();
-		
-
-		
+       DataGeneral.general();
 		
 	}
 }
