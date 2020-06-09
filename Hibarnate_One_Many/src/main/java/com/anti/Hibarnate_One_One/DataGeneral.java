@@ -1,4 +1,4 @@
-package com.anti.Hibarnate_One_Many;
+package com.anti.Hibarnate_One_One;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -44,13 +44,17 @@ public class DataGeneral {
 		stud.setRollno(4);
 		stud.setName("Munyi");
 		stud.setMarks(50);
-		stud.getLaptop().add(lap);
-		stud.getLaptop().add(lap1);
-		stud.getLaptop().add(lap2);
-		stud.getLaptop().add(lap3);
-		
+		stud.setLaptop(lap);
 
+		stud1.setRollno(2);
+		stud1.setName("Munyó");
+		stud1.setMarks(104);
+		stud1.setLaptop(lap2);
 
+		stud2.setRollno(1);
+		stud2.setName("Mama");
+		stud2.setMarks(107);
+		stud2.setLaptop(lap3);
 
 		System.out.println(lap.toString());
 		System.out.println(stud.toString());
@@ -64,17 +68,22 @@ public class DataGeneral {
 		Transaction tx = se.beginTransaction();
 
 		se.save(stud);
+		se.save(stud2);
+		se.save(stud1);
+
 		se.save(lap);
 		se.save(lap1);
 		se.save(lap2);
 		se.save(lap3);
-		
-		
 
 		tx.commit();
 
-		System.out.println("Many-Many without extra table");
+		lap = se.get(Laptop.class, 103);
+		stud = se.get(Student.class, 4);
 
+		System.out.println(lap.toString());
+		System.out.println(stud.toString());
+        System.out.println("One-To-One");
 	}
 
 	

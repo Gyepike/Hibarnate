@@ -1,4 +1,4 @@
-package com.anti.Hibarnate_One_Many;
+package com.anti.Hibarnate_Many_Many.copy;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -40,6 +40,7 @@ public class DataGeneral {
 
 		lap3.setAid(107);
 		lap3.setLaname("Asus");
+		
 
 		stud.setRollno(4);
 		stud.setName("Munyi");
@@ -47,9 +48,21 @@ public class DataGeneral {
 		stud.getLaptop().add(lap);
 		stud.getLaptop().add(lap1);
 		stud.getLaptop().add(lap2);
-		stud.getLaptop().add(lap3);
+	
 		
-
+		stud1.setRollno(5);
+		stud1.setName("Munyo");
+		stud1.setMarks(50);
+		stud1.getLaptop().add(lap);
+		stud1.getLaptop().add(lap1);
+		stud1.getLaptop().add(lap2);
+	
+		
+		
+        lap3.getStudent().add(stud);
+        lap3.getStudent().add(stud1);
+        
+        lap2.getStudent().add(stud1);
 
 
 		System.out.println(lap.toString());
@@ -64,12 +77,13 @@ public class DataGeneral {
 		Transaction tx = se.beginTransaction();
 
 		se.save(stud);
-		se.save(lap);
-		se.save(lap1);
-		se.save(lap2);
-		se.save(lap3);
+		se.save(stud1);
 		
-		
+	    se.save(lap);
+	    se.save(lap1);
+	    se.save(lap2);
+	    se.save(lap3);
+	    
 
 		tx.commit();
 
