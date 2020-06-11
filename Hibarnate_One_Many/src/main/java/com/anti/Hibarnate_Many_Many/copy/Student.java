@@ -17,7 +17,13 @@ public class Student {
 	public int rollno;
 	
 	
-	private String name;
+	private FullName name;
+	public FullName getName() {
+		return name;
+	}
+	public void setName(FullName name) {
+		this.name = name;
+	}
 	private int marks;
 	
 	@ManyToMany(mappedBy = "student") // put sudent_rollno connect filed ha nincs kapcsolo tabla jon letre
@@ -36,12 +42,7 @@ public class Student {
 	public void setRollno(int rollno) {
 		this.rollno = rollno;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+
 	public int getMarks() {
 		return marks;
 	}

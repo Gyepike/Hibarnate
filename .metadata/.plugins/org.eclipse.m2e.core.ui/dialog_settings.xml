@@ -6,6 +6,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\Gyepi\eclipse-workspace-2019\laptop_student"/>
 			<item value="C:\Users\Gyepi\eclipse-workspace-2019\cmshopingchart"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -30,6 +31,7 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.anti.Hibarnate_One_Many"/>
 			<item value="com.anti.laptop_student"/>
 			<item value="com.anti.hibarnate"/>
 		</list>
@@ -37,6 +39,7 @@
 			<item value="com.anti"/>
 		</list>
 		<list key="artifactId">
+			<item value="Hibarnate_One_Many"/>
 			<item value="laptop_student"/>
 			<item value="hibarnate"/>
 		</list>

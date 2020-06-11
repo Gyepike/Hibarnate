@@ -29,6 +29,10 @@ public class DataGeneral {
 		lap2 = new Laptop();
 		lap3 = new Laptop();
 
+		
+		Taska taska = new Taska();
+		
+		
 		lap.setAid(103);
 		lap.setLaname("Toshiba");
 
@@ -43,7 +47,7 @@ public class DataGeneral {
 		
 
 		stud.setRollno(4);
-		stud.setName("Munyi");
+		stud.setName(new FullName("Manó ","Munyi "," GombaHáz"));
 		stud.setMarks(50);
 		stud.getLaptop().add(lap);
 		stud.getLaptop().add(lap1);
@@ -51,7 +55,7 @@ public class DataGeneral {
 	
 		
 		stud1.setRollno(5);
-		stud1.setName("Munyo");
+		stud1.setName(new FullName("Manó ","Munyó "," GombaHáz"));
 		stud1.setMarks(50);
 		stud1.getLaptop().add(lap);
 		stud1.getLaptop().add(lap1);
@@ -64,12 +68,21 @@ public class DataGeneral {
         
         lap2.getStudent().add(stud1);
 
-
+        taska.setMarka("Budmil");
+        taska.setTno(1);
+        
+        /*
 		System.out.println(lap.toString());
 		System.out.println(stud.toString());
+		 */
+        
+        
 
 		Configuration con = new Configuration().configure().addAnnotatedClass(Student.class);
+		
 		con.addAnnotatedClass(Laptop.class);
+		con.addAnnotatedClass(Taska.class);
+		
 
 		SessionFactory sef = con.buildSessionFactory();
 
@@ -83,6 +96,9 @@ public class DataGeneral {
 	    se.save(lap1);
 	    se.save(lap2);
 	    se.save(lap3);
+	    
+	    
+	    se.save(taska);
 	    
 
 		tx.commit();
