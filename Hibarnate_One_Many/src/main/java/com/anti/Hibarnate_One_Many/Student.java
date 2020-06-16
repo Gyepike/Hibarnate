@@ -19,7 +19,7 @@ public class Student {
 	private String name;
 	private int marks;
 	
-	@OneToMany(mappedBy = "student") // put sudent_rollno connect filed ha nincs kapcsolo tabla jon letre
+	@OneToMany // put sudent_rollno connect filed ha nincs kapcsolo tabla jon letre
 	private List <Laptop> laptop = new ArrayList<Laptop>();
 	
 

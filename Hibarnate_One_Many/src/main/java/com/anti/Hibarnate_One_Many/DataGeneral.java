@@ -28,6 +28,12 @@ public class DataGeneral {
 		lap1 = new Laptop();
 		lap2 = new Laptop();
 		lap3 = new Laptop();
+		
+		
+		stud.setRollno(4);
+		stud.setName("Munyi");
+		stud.setMarks(50);
+		
 
 		lap.setAid(103);
 		lap.setLaname("Toshiba");
@@ -41,9 +47,8 @@ public class DataGeneral {
 		lap3.setAid(107);
 		lap3.setLaname("Asus");
 
-		stud.setRollno(4);
-		stud.setName("Munyi");
-		stud.setMarks(50);
+	
+		
 		stud.getLaptop().add(lap);
 		stud.getLaptop().add(lap1);
 		stud.getLaptop().add(lap2);
@@ -53,6 +58,8 @@ public class DataGeneral {
 
 
 		System.out.println(lap.toString());
+		System.out.println(lap1.toString());
+		
 		System.out.println(stud.toString());
 
 		Configuration con = new Configuration().configure().addAnnotatedClass(Student.class);
@@ -63,17 +70,18 @@ public class DataGeneral {
 		Session se = sef.openSession();
 		Transaction tx = se.beginTransaction();
 
-		se.save(stud);
+		
+		
 		se.save(lap);
 		se.save(lap1);
 		se.save(lap2);
 		se.save(lap3);
 		
-		
+		se.save(stud);
 
 		tx.commit();
 
-		System.out.println("Many-Many without extra table");
+		System.out.println("One-Many without extra table");
 
 	}
 
