@@ -28,22 +28,67 @@ public class QueryStudentDemo {
 
 			// list
 
-			printOut(theStudents);
+			//printOut(theStudents);
 
+			String a = "Jane";
 			System.out.println("------------------------------");
-			theStudents = session.createQuery("from Student s where s.lastName = 'Jane' "
+			/**
+			theStudents = session.createQuery("from Student s where s.lastName =  '"+a+"'"
 					+ " OR s.lastName ='Wall' "
-					).getResultList(); // mingi ugy
-																											// ahogz
-																											// JAVA code
-																											// nevezik!!!
-			// commit nem last_Name az adatbazis !!!
+					).getResultList(); 
+			
+			// bad partice '"+a+"'
+			
+			**/
+			
+			class Lekerdez { 
+			
+			  
+
+				private String lastname = "Wall";
+				private String firstName = "bone";
+ 
+				public String getFirstName() {
+					return firstName;
+				}
+
+				public void setFirstName(String firstName) {
+					this.firstName = firstName;
+				}
+
+				public String getlastname() {
+					return lastname;
+				}
+
+				public void setlastname(String lastName) {
+					this.lastname= lastName;
+				}
+			      
+			}
+			
+			Lekerdez lekerdez = new Lekerdez();
+			
+			
+			String lastname = "Jane";
+			String hql = "from Student s where s.lastName = :lastname "
+					+ " or s.firstName = :firstName "
+					;
+			
+			//theStudents = session.createQuery(hql).setParameter("lastname", lastname).setParameter("firstName", "Goliath").getResultList(); 
+			
+			
+			String hql2 = "from Student s where s.lastName = :lastname  OR s.lastName = :firstName";
+			
+			
+			System.out.println("lekerdez !!!");
+			theStudents = session.createQuery(hql2).setProperties(lekerdez).getResultList();
+			
 			
 			printOut(theStudents);
              
 			System.out.println("------------------------------");
 			
-			theStudents = session.createQuery("from Student s where s.email like '%Ap%' ").getResultList();
+			//theStudents = session.createQuery("from Student s where s.email like '%Ap%' ").getResultList();
 			
 			printOut(theStudents);
 			System.out.println("------------------------------");

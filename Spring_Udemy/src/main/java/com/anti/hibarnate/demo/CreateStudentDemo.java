@@ -1,5 +1,7 @@
 package com.anti.hibarnate.demo;
 
+import java.util.Date;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -33,11 +35,13 @@ public class CreateStudentDemo {
 			// use sesion to save
 
 			// create student
+	
+			
 			System.out.println("Create 3 Student objects");
-			Student tempStudent = new Student("Paul", "Wall", "paul@anti.com");
-			Student tempStudent2 = new Student("Demona", "Eliamarca", "demona@anti.com");
-			Student tempStudent3 = new Student("Mary", "Jane", "mary@anti.com");
-			Student tempStudent4 = new Student("Apple", "bone", "apple@anti.com");
+			Student tempStudent = new Student("Paul", "Wall", "paul@anti.com", java.util.Calendar.getInstance().getTime());
+			Student tempStudent2 = new Student("Demona", "Eliamarca", "demona@anti.com", java.util.Calendar.getInstance().getTime());
+			Student tempStudent3 = new Student("Mary", "Jane", "mary@anti.com", java.util.Calendar.getInstance().getTime());
+			Student tempStudent4 = new Student("Apple", "bone", "apple@anti.com", java.util.Calendar.getInstance().getTime());
 			
 			System.out.println(tempStudent.toString());
 

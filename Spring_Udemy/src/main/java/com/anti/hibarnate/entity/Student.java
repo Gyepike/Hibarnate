@@ -1,11 +1,15 @@
 package com.anti.hibarnate.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "student") // mert kisbetus student ezért explicirt megjelelöm
@@ -24,6 +28,28 @@ public class Student {
 	private String lastName;
 
 	private String email;
+	
+	@Temporal(TemporalType.DATE)
+	private Date joinedDate;
+
+	public Student(String firstName, String lastName, String email, Date joinedDate) {
+		
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.joinedDate = joinedDate;
+	}
+
+
+	public Date getJoinedDate() {
+		return joinedDate;
+	}
+
+
+	public void setJoinedDate(Date joinedDate) {
+		this.joinedDate = joinedDate;
+	}
+
 
 	public Student() {
 
@@ -68,11 +94,16 @@ public class Student {
 		return "Student [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
 	}
 
-	public Student(String firstName, String lastName, String email) {
 
+	public Student( String firstName, String lastName, String email) {
+	
+		
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
+	
 	}
+
+	
 
 }
