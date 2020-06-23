@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+// https://www.youtube.com/watch?v=MLsLrj8XFOA&list=PLBgMUB7xGcO0cujAlaeDDEOdZkeNZUScM&index=14
+// mapedy by onlz need in bi direction hibarnate cannot link 2 times 
 @Entity
 @Table(name = "instructor_Detail")
 public class InstructorDetail {
@@ -25,23 +27,24 @@ public class InstructorDetail {
 	@Column(name = "id")
 	private int id;
 
-	@Column(name = "youtube_channel")
+	@Column(name = "youtube_channel", nullable = false)  // nem lehet null 
 	private String youtubeChannel;
 
 	
 	// add ne field for Bi
 	
-	@OneToOne(mappedBy = "instruncDetail", cascade = CascadeType.ALL)
+    @OneToOne( mappedBy = "instruncDetail", cascade = CascadeType.ALL)
 	private Instructor instructor;
 	
 	public Instructor getInstructor() {
 		return instructor;
 	}
-
+   
 	public void setInstructor(Instructor instructor) {
 		this.instructor = instructor;
 	}
-
+    
+	
 	public InstructorDetail() {
 	}
 

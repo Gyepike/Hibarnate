@@ -1,5 +1,7 @@
 package com.anti.hibarnate.entity;
 
+import java.util.Date;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "instructor")
@@ -20,10 +25,26 @@ public class Instructor {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name="first_name")
+	@Temporal(TemporalType.DATE)   // how date saved in db
+	private Date idopont;
+	
+	public Date getIdopont() {
+		return idopont;
+	}
+
+
+
+	public void setIdopont(Date idopont) {
+		this.idopont = idopont;
+	}
+
+	@Transient     // nem menti az adat bazisba 
+	private int id2;
+	
+	@Column(name="first_name" ,nullable = false)
 	private String firstName;
 	
-	@Column(name="last_name")
+	@Column(name="last_name" , nullable = false) // kötelezo nullable
 	private String lastName;
 	
 	// setup link

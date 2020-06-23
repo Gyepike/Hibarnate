@@ -12,7 +12,7 @@ import org.hibernate.cfg.Configuration;
 import com.anti.hibarnate.entity.Instructor;
 import com.anti.hibarnate.entity.InstructorDetail;
 
-public class GetInstuctorDetailsDemo {
+public class DeleteInstuctorDetailsDemo {
 
 	private static void save() {
 		Configuration con = null;
@@ -43,6 +43,10 @@ public class GetInstuctorDetailsDemo {
 
 			System.out.println(tempInstructorDetail.getInstructor().toString());
 
+			// delete 
+			
+			session.remove(tempInstructorDetail);
+			
 			// commit
 
 			tx.commit();

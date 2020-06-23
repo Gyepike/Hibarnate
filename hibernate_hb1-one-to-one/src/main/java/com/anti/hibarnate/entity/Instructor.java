@@ -10,6 +10,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+//https://www.youtube.com/watch?v=MLsLrj8XFOA&list=PLBgMUB7xGcO0cujAlaeDDEOdZkeNZUScM&index=14
+//mapedy by onlz need in bi direction hibarnate cannot link 2 times 
+
 @Entity
 @Table(name = "instructor")
 public class Instructor {
@@ -28,7 +31,7 @@ public class Instructor {
 	
 	// setup link
 	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="instructor_id_munyi" ) // ha nem addunk meg semmit masik tabla PK lesz
+	@JoinColumn(name="instructor_id_munyi" ) // ha nem addunk meg semmit masik tabla PK lesz owner
 	private InstructorDetail instruncDetail;
 	
 	private String email;

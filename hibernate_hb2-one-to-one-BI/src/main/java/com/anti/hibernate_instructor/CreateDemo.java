@@ -10,7 +10,8 @@ import org.hibernate.cfg.Configuration;
 import com.anti.hibarnate.entity.Instructor;
 import com.anti.hibarnate.entity.InstructorDetail;
 
-
+//https://howtoprogramwithjava.com/hibernate-manytoone-unidirectional-tutorial/
+//https://www.youtube.com/watch?v=onS9G0zpQwA&list=PLBgMUB7xGcO0cujAlaeDDEOdZkeNZUScM
 public class CreateDemo {
 	
 	private static void save() {
@@ -32,6 +33,7 @@ public class CreateDemo {
 			Session session = factory.openSession();
 
 		    Instructor tempInstructor = new Instructor("Chad","Darby","darby@luv2.com");
+		    tempInstructor.setIdopont(new Date());
 		    InstructorDetail tempInstructorDetail = new InstructorDetail("http://www.luv2code/youtube", "luv 2 code");
 	       
 		    
@@ -39,6 +41,7 @@ public class CreateDemo {
 		    Instructor tempInstructor2 = new Instructor("Munyi","Mano","munyi@anti.com");
 		    InstructorDetail tempInstructorDetail2 = new InstructorDetail("http://www.manok/youtube", "gombahaz");
 	
+		    tempInstructor2.setIdopont(new Date());
 		    
 		    tempInstructor.setInstruncDetail(tempInstructorDetail);
 		    tempInstructor2.setInstruncDetail(tempInstructorDetail2);

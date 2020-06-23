@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+//https://www.youtube.com/watch?v=MLsLrj8XFOA&list=PLBgMUB7xGcO0cujAlaeDDEOdZkeNZUScM&index=14
+//mapedy by onlz need in bi direction hibarnate cannot link 2 times 
 @Entity
 @Table(name = "instructor_Detail")
 public class InstructorDetail {
